@@ -71,7 +71,7 @@ export default function Registro() {
         <p className="mt-6 text-center text-sm text-gray-300">
           Already have an account?{' '}
           <button
-            onClick={() => router.push("Login")}
+            onClick={() => router.push("login")}
             className="text-blue-400 hover:underline"
           >
             Log in
