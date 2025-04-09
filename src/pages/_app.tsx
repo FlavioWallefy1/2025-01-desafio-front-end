@@ -7,7 +7,7 @@ export default function App({ Component, pageProps }: AppProps) {
     <>
       
     <Head>
-  <title>Biodata</title>
+  <title>BioData</title>
   <link rel="icon" type="image/png" href="/logo_biodata.png" />
     </Head>
 

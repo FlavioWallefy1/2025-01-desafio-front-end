@@ -4,18 +4,38 @@ import { useRouter } from "next/router";
 const Navbar: React.FC = () => {
   const router = useRouter();
 
+  const handleLogoClick = () => {
+    router.push("/"); // Redireciona para a tela principal (home)
+  };
+
   return (
-    <nav className="flex items-center justify-between px-6 py-4 bg-white shadow-md">
-      <div className="flex items-center gap-2">
-        <div className="w-10 h-10 bg-green-600 rounded-full flex items-center justify-center text-white font-bold text-xl">
-          🌿
+    <nav className="absolute top-0 left-0 right-0 p-4 bg-transparent z-10">
+      <div className="flex items-center justify-between w-full">
+        {/* Logo com clique para redirecionamento */}
+        <div onClick={handleLogoClick} className="cursor-pointer flex items-center space-x-2">
+          <img src="/logo_biodata.png" alt="Logo" className="w-16 h-16" />
+          <h1 className="text-white font-bold text-xl">BioData</h1>
         </div>
-        <span className="text-xl font-semibold text-gray-800">Biodata</span>
-      </div>
-      <div className="space-x-4">
-        <button onClick={() => router.push("/informacoes")} className="text-gray-700 hover:text-green-600 font-medium">Informações</button>
-        <button onClick={() => router.push("/login")} className="text-gray-700 hover:text-green-600 font-medium">Login</button>
-        <button onClick={() => router.push("/registro")} className="text-gray-700 hover:text-green-600 font-medium">Registro</button>
+
+        {/* Links Centralizados */}
+        <div className="flex-grow flex justify-center space-x-8 text-white">
+          <button onClick={() => router.push("/")} className="hover:text-[#B2DFDB] transition">
+            Home
+          </button>
+          <button onClick={() => router.push("/informacoes")} className="hover:text-[#B2DFDB] transition">
+            Espécies
+          </button>
+        </div>
+
+        {/* Botão Login (Direita) */}
+        <div className="flex items-center">
+          <button
+            onClick={() => router.push("/login")}
+            className="text-white font-semibold px-4 py-2 rounded-md hover:bg-white hover:text-[#1E3A8A] transition"
+          >
+            Login
+          </button>
+        </div>
       </div>
     </nav>
   );
