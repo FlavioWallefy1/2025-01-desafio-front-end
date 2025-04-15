@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useRouter } from "next/router";
-import { sendPasswordResetEmail } from "firebase/auth"; // Importar a função de reset de senha
-import { auth } from "../../utils/firebase"; // A instância do Firebase Auth
+import { sendPasswordResetEmail } from "firebase/auth"; 
+import { auth } from "../../utils/firebase";  
 
 export default function ForgotPassword() {
   const [email, setEmail] = useState("");
@@ -13,8 +13,8 @@ export default function ForgotPassword() {
     e.preventDefault();
 
     try {
-      await sendPasswordResetEmail(auth, email); // Envia o link de recuperação de senha
-      setSuccess(true); // Exibe mensagem de sucesso
+      await sendPasswordResetEmail(auth, email); 
+      setSuccess(true); 
     } catch (err) {
       setError("Erro ao enviar o link de redefinição de senha. Tente novamente.");
     }
@@ -25,9 +25,7 @@ export default function ForgotPassword() {
       <div className="bg-[#0F172A] text-white p-8 rounded-2xl w-full max-w-sm shadow-lg transform transition duration-300 hover:scale-105">
         {/* Título */}
         <h2 className="text-3xl font-bold text-center mb-6">Esqueceu a Senha?</h2>
-
         <form className="space-y-5" onSubmit={handleResetPassword}>
-          {/* Campo de E-mail */}
           <div className="relative">
             <label htmlFor="email" className="block text-sm mb-1">E-mail</label>
             <input
@@ -40,7 +38,6 @@ export default function ForgotPassword() {
             />
           </div>
 
-          {/* Botão para Enviar Link de Recuperação */}
           <button
             type="submit"
             className="w-full py-3 rounded-md bg-green-500 hover:bg-green-600 transition text-white font-semibold"
@@ -49,10 +46,9 @@ export default function ForgotPassword() {
           </button>
         </form>
 
-        {error && <p className="mt-4 text-center text-sm text-red-500">{error}</p>} {/* Exibe o erro, se houver */}
-        {success && <p className="mt-4 text-center text-sm text-green-500">Link enviado! Verifique seu e-mail.</p>} {/* Exibe o sucesso */}
-
-        {/* Link para retornar ao Login */}
+        {error && <p className="mt-4 text-center text-sm text-red-500">{error}</p>} 
+        {success && <p className="mt-4 text-center text-sm text-green-500">Link enviado! Verifique seu e-mail.</p>} 
+        
         <p className="mt-6 text-center text-sm text-gray-300">
           Lembrou da sua senha?{' '}
           <button
