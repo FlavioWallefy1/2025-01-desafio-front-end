@@ -112,9 +112,9 @@ export default function Informacoes() {
         ) : (
           <>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-              {speciesList.map((species) => (
+              {speciesList.map((species, index) => (
                 <div
-                  key={species.key}
+                  key={`${species.key}-${index}`}  
                   className="bg-white rounded-xl shadow-md p-6 hover:shadow-lg transition cursor-pointer"
                   onClick={() => setSelectedSpecies(species)}
                 >

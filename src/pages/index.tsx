@@ -35,15 +35,15 @@ const index: React.FC = () => {
   return (
     <div className="min-h-screen flex flex-col">
       <Navbar />
-      
+
       <section className="relative w-full h-[80vh] bg-cover bg-center bg-fixed" style={{ backgroundImage: "url('/borboleta.jpg')" }}>
         <div className="absolute inset-0 bg-black opacity-50"></div> 
         <div className="absolute inset-0 flex items-center justify-center text-center text-white z-10 px-6">
           <div>
-            <h1 className="text-4xl md:text-5xl font-bold text-[#FFFFFF] mb-6">
+            <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-[#FFFFFF] mb-6">
               Explore a Biodiversidade com Tecnologia
             </h1>
-            <p className="text-lg mb-8">
+            <p className="text-base sm:text-lg mb-8">
               O <strong>Biodata</strong> é uma plataforma que conecta você aos dados da biodiversidade global.
               Descubra espécies, explore classificações e aprofunde-se no conhecimento da vida na Terra com dados da API GBIF.
             </p>
@@ -57,12 +57,12 @@ const index: React.FC = () => {
         </div>
       </section>
 
-      <section className="bg-gray-100 py-16">
+      <section className="bg-gray-100 py-16 px-4 sm:px-6 lg:px-8">
         <div className="text-center mb-8">
           <h2 className="text-3xl font-semibold text-[#1E3A8A]">Principais Espécies</h2>
           <p className="text-lg text-gray-600">Conheça algumas das espécies mais incríveis registradas.</p>
         </div>
-        <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
+        <div className="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8">
           <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-transform duration-300 hover:scale-105">
             <img src="/esquilo.jpg" alt="Esquilo" className="w-full h-48 object-cover rounded-md mb-4" />
             <h3 className="text-lg font-semibold text-[#1E3A8A]">Sciurus carolinensis</h3>
