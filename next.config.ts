@@ -1,7 +1,6 @@
-export default {
-  output: 'export', 
-  trailingSlash: true, 
+module.exports = {
+  reactStrictMode: true,
   images: {
-    unoptimized: true, 
+    unoptimized: true,
   },
 };

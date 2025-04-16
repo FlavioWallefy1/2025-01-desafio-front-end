@@ -63,14 +63,27 @@ const index: React.FC = () => {
           <p className="text-lg text-gray-600">Conheça algumas das espécies mais incríveis registradas.</p>
         </div>
         <div className="max-w-7xl mx-auto px-6 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10">
-          {speciesCardImages.map((image, index) => (
-            <div key={index} className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-transform duration-300 hover:scale-105">
-              <img src={image} alt="Espécie" className="w-full h-48 object-cover rounded-md mb-4" />
-              <h3 className="text-xl font-semibold text-[#1E3A8A]">Nome da Espécie</h3>
-              <p className="text-gray-600">Breve descrição da espécie que será exibida aqui.</p>
-            </div>
-          ))}
-        </div>
+          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-transform duration-300 hover:scale-105">
+            <img src="/esquilo.jpg" alt="Esquilo" className="w-full h-48 object-cover rounded-md mb-4" />
+            <h3 className="text-lg font-semibold text-[#1E3A8A]">Sciurus carolinensis</h3>
+            <p className="text-gray-600">Os esquilos são famosos por sua habilidade em armazenar alimentos para o inverno.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-transform duration-300 hover:scale-105">
+            <img src="/panda.jpg" alt="Panda" className="w-full h-48 object-cover rounded-md mb-4" />
+            <h3 className="text-lg font-semibold text-[#1E3A8A]">Ailuropoda melanoleuca</h3>
+            <p className="text-gray-600">Um dos animais mais amados do mundo, o panda é conhecido por seu comportamento dócil.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-transform duration-300 hover:scale-105">
+            <img src="/abelha.jpg" alt="Abelha" className="w-full h-48 object-cover rounded-md mb-4" />
+            <h3 className="text-lg font-semibold text-[#1E3A8A]">Bombus vagans</h3>
+            <p className="text-gray-600">Essas abelhas desempenham um papel crucial na polinização.</p>
+          </div>
+          <div className="bg-white p-6 rounded-lg shadow-md hover:shadow-lg transition-transform duration-300 hover:scale-105">
+            <img src="/besorou.jpg" alt="Besouro" className="w-full h-48 object-cover rounded-md mb-4" />
+            <h3 className="text-lg font-semibold text-[#1E3A8A]">Hadramphus tuberculatus</h3>
+            <p className="text-gray-600">Esse besouro é uma das muitas espécies incríveis de besouros registrados no GBIF.</p>
+          </div>
+        </div>  
       </section>
       <Footer />
     </div>

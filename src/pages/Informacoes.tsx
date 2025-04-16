@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 import { useRouter } from "next/router";
+import { FaTimes } from "react-icons/fa";  
 
 interface Species {
   key: number;
@@ -85,7 +86,7 @@ export default function Informacoes() {
   return (
     <div className="min-h-screen flex flex-col bg-gradient-to-b from-[#E0F2F1] to-[#FFFFFF]">
       <Navbar />
-
+      
       <main className="flex-grow px-6 pt-40 pb-10"> 
         <form onSubmit={handleSearch} className="max-w-xl mx-auto mb-8 flex items-center gap-2">
           <input
@@ -157,18 +158,22 @@ export default function Informacoes() {
             </div>
           </>
         )}
+
         {selectedSpecies && (
           <div
             className="fixed inset-0 bg-black bg-opacity-50 backdrop-blur-sm flex items-center justify-center z-50 px-4"
-            onKeyDown={(e) => e.key === "Escape" && setSelectedSpecies(null)}
+            onClick={() => setSelectedSpecies(null)} 
           >
-            <div className="bg-white rounded-xl max-w-lg w-full p-6 relative">
+            <div
+              className="bg-white rounded-xl max-w-lg w-full p-6 relative"
+              onClick={(e) => e.stopPropagation()} 
+            >
               <button
                 onClick={() => setSelectedSpecies(null)}
-                className="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-xl"
+                className="absolute top-2 right-2 text-gray-500 hover:text-red-500 text-1xl"
                 aria-label="Fechar modal"
               >
-                &times;
+                <FaTimes /> 
               </button>
               <img src={selectedSpecies.imageUrl} alt={selectedSpecies.scientificName} className="w-full h-60 object-cover rounded-md mb-4" />
               <h2 className="text-2xl font-bold text-[#1E3A8A] mb-4">
@@ -197,6 +202,7 @@ export default function Informacoes() {
           </div>
         )}
       </main>
+
       <Footer />
     </div>
   );
